@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills Test</title>
+<link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+<script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background-color: #e9e6dc;
+    color: #2c2c22;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 100vh;
+    padding: 48px 20px 80px;
+  }
+  .card {
+    max-width: 460px;
+    margin: 0 auto;
+    background-color: #f5f3ec;
+    border: 1px solid #cfc9b8;
+    border-radius: 18px;
+    padding: 44px 40px 40px;
+    box-shadow: 0 20px 40px -20px rgba(54, 80, 41, 0.25);
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #365029;
+    margin: 0 0 6px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #6b6b58;
+    margin: 0 0 24px;
+    line-height: 1.5;
+  }
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, #365029, transparent);
+    margin-bottom: 28px;
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #365029;
+    margin-bottom: 6px;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #b9b39e;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    color: #2c2c22;
+  }
+  input:focus {
+    outline: none;
+    border-color: #365029;
+    box-shadow: 0 0 0 3px rgba(54, 80, 41, 0.15);
+  }
+  button#btn {
+    width: 100%;
+    margin-top: 28px;
+    padding: 14px;
+    background-color: #b98b4e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  button#btn:hover {
+    background-color: #a3763c;
+  }
+  /* Green result box */
+  #result {
+    margin-top: 24px;
+    padding: 20px 22px;
+    background-color: #365029;
+    color: #e9e6dc;
+    border-radius: 10px;
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  #result h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    text-align: center;
+  }
+  #result p {
+    margin: 0 0 8px;
+  }
+  #result p:last-child {
+    margin-bottom: 0;
+  }
+  footer {
+    margin-top: 28px;
+    text-align: center;
+    color: #6b6b58;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+    <script type="py" src="main.py"></script>
+
+<form class="card" id="application" onsubmit="return false">
+  <h1>Periodic Table Data</h1>
+  <p class="subtitle">
+    Enter a periodic table non-metal element symbol (i.e. Xe, H, O, etc)
+    to search information about it. <b>Input is case sensitive. Type the
+    first letter of the element symbol in uppercase.</b>
+  </p>
+  <div class="divider"></div>
+
+  <label for="elementA">Element symbol</label>
+  <input type="text" id="elementA" placeholder="Enter element symbol">
+
+  <button type="button" id="btn" py-click="search_element">Retrieve information</button>
+
+  <div id="result">
+    <h3>Element Info</h3>
+
+    <p><b>Element Symbol:</b> <span id="symbol"></span></p>
+    <p><b>Element Name:</b> <span id="name"></span></p>
+    <p><b>Atomic Number:</b> <span id="number"></span></p>
+    <p><b>Atomic Mass:</b> <span id="mass"></span></p>
+  </div>
+
+  <footer>Rocky Saludes 2026 SKILLS TEST Q2</footer>
+</form>
+</body>
+</html>
