@@ -86,28 +86,18 @@
   button#btn:hover {
     background-color: #a3763c;
   }
-  /* Green result box */
-  #result {
+ 
+  #div_name {
     margin-top: 24px;
     padding: 20px 22px;
+    min-height: 140px;
     background-color: #365029;
     color: #e9e6dc;
     border-radius: 10px;
     font-family: 'Fraunces', serif;
     font-size: 17px;
-    line-height: 1.6;
-  }
-  #result h3 {
-    font-size: 19px;
-    font-weight: 600;
-    margin: 0 0 12px;
-    text-align: center;
-  }
-  #result p {
-    margin: 0 0 8px;
-  }
-  #result p:last-child {
-    margin-bottom: 0;
+    line-height: 1.8;
+    white-space: pre-line;
   }
   footer {
     margin-top: 28px;
@@ -119,32 +109,28 @@
 </head>
 <body>
 
-    <script type="py" src="main.py"></script>
+<script type="py" src="main.py"></script>
 
-<form class="card" id="application" onsubmit="return false">
+<div class="card">
   <h1>Periodic Table Data</h1>
   <p class="subtitle">
-    Enter a periodic table non-metal element symbol (i.e. Xe, H, O, etc)
-    to search information about it. <b>Input is case sensitive. Type the
-    first letter of the element symbol in uppercase.</b>
+    Enter a non-metal element symbol (i.e. Xe, H, O) to search for its
+    information. <b>Input is case sensitive. Type the first letter of
+    the symbol in uppercase.</b>
   </p>
   <div class="divider"></div>
 
-  <label for="elementA">Element symbol</label>
-  <input type="text" id="elementA" placeholder="Enter element symbol">
+  <!-- Input field -->
+  <label for="input1">Element symbol</label>
+  <input type="text" id="input1" placeholder="Enter element symbol">
 
-  <button type="button" id="btn" py-click="search_element">Retrieve information</button>
+  <!-- Button -->
+  <button type="button" id="btn" py-click="periodic">Search</button>
 
-  <div id="result">
-    <h3>Element Info</h3>
-
-    <p><b>Element Symbol:</b> <span id="symbol"></span></p>
-    <p><b>Element Name:</b> <span id="name"></span></p>
-    <p><b>Atomic Number:</b> <span id="number"></span></p>
-    <p><b>Atomic Mass:</b> <span id="mass"></span></p>
-  </div>
+  <!-- Div section for display -->
+  <div id="div_name"></div>
 
   <footer>Rocky Saludes 2026 SKILLS TEST Q2</footer>
-</form>
+</div>
 </body>
 </html>

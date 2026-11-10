@@ -1,42 +1,42 @@
-from pyscript import document, display
+from pyscript import document
 
 
-elements = {
-    "F": ("FLUORINE", 9, 18.9984),
-    "H": ("HYDROGEN", 1, 1.0079),
-    "N": ("NITROGEN", 7, 14.0067),
-    "Xe": ("XENON", 54, 131.293),
-    "He": ("HELIUM", 2, 4.0026),
-    "Ne": ("NEON", 10, 20.1797),
-    "Ar": ("ARGON", 18, 39.948),
-    "Kr": ("KRYPTON", 36, 83.8),
-    "Rn": ("RADON", 86, 222),
-    "C": ("CARBON", 6, 12.0107),
-    "O": ("OXYGEN", 8, 15.9994),
-    "P": ("PHOSPHORUS", 15, 30.9738),
-    "S": ("SULFUR", 16, 32.065),
-    "Cl": ("CHLORINE", 17, 35.453),
-    "Se": ("SELENIUM", 34, 78.96),
-    "Br": ("BROMINE", 35, 79.904),
-    "I": ("IODINE", 53, 126.9045),
+non_metals = {
+    "H": ("Hydrogen", 1, 1.008),
+    "He": ("Helium", 2, 4.0026),
+    "C": ("Carbon", 6, 12.011),
+    "N": ("Nitrogen", 7, 14.007),
+    "O": ("Oxygen", 8, 15.999),
+    "F": ("Fluorine", 9, 18.998),
+    "Ne": ("Neon", 10, 20.180),
+    "P": ("Phosphorus", 15, 30.974),
+    "S": ("Sulfur", 16, 32.06),
+    "Cl": ("Chlorine", 17, 35.45),
+    "Ar": ("Argon", 18, 39.948),
+    "Se": ("Selenium", 34, 78.971),
+    "Br": ("Bromine", 35, 79.904),
+    "Kr": ("Krypton", 36, 83.798),
+    "I": ("Iodine", 53, 126.90),
+    "Xe": ("Xenon", 54, 131.29),
+    "Rn": ("Radon", 86, 222),
 }
 
 
-not_found_message = (
-    "Sorry! This element does not exist in the non-metals list. "
-    + "Please note that the input is case sensitive."
-)
 
+def periodic(e):
+   
+    document.getElementById("div_name").innerHTML = ""
 
-def search_element(e):
-  
-    elementA = document.getElementById("elementA").value
+    
+    element_Name = document.getElementById("input1").value
 
    
-    result = elements.get(elementA, (not_found_message, "-", "-"))
+    var2 = non_metals.get(element_Name, ("Element not found", "-", "-"))
 
-   
-    document.getElementById("symbol").innerText = elementA  # element symbol
-    document.getElementById("name").innerText = result[0]  # element name
-    document.getElementById("number").innerText = result[1]  # atomic number
-    document.getElementById("mass").innerText = result[2]  # atomic mass
+    
+    document.getElementById("div_name").innerHTML = f"""
+Symbol: {element_Name}
+Element: {var2[0]}
+Atomic Number: {var2[1]}
+Atomic Mass: {var2[2]}
+"""
